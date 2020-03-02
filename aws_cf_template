@@ -1,3 +1,5 @@
+# Tutorial: Building an AWS Environment from Scratch Using Cloudformation
+
 AWSTemplateFormatVersion: 2010-09-09
 Resources:
     VPC:
