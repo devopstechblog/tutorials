@@ -1,4 +1,4 @@
-# Tutorial: Creating a Kubernetes Deployment Nginx
+# Tutorial: Creating a Kubernetes Deployment with Nginx
 
 apiVersion: apps/v1
 kind: Deployment
