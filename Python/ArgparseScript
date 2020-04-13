@@ -1,0 +1,33 @@
+# This is the Python code used for the resource_checker.py script.
+
+#!/bin/python3
+
+import argparse
+import datetime
+import psutil
+
+parser = argparse.ArgumentParser(description = "Check system resources.")
+parser.add_argument('--date', '-d', action='store_true', help='Print date')
+parser.add_argument('--resource', '-r', choices=['cpu', 'mem', 'disk'], nargs=1, help='Prints resource to check')
+parser.add_argument('--message', '-m', help='Adds a message')
+parser.add_argument('--file', '-f', action='store_true', help='stores in file')
+args=parser.parse_args()
+
+if args.date:
+  date = datetime.date.today()
+  print(date)
+if args.resource == ['cpu']:
+  resource = psutil.cpu_percent()
+  print(resource)
+if args.resource == ['mem']:
+  resource = psutil.virtual_memory()
+  print(resource)
+if args.resource == ['disk']:
+  resource = psutil.disk_usage('/')
+if args.message:
+  message = args.message
+  print(message)
+if args.file:
+  with open('resources.log', 'a') as f:
+    f.write(str(date) + '\n' + str(resource) + '\n' + str(message) + '\n')
+    
