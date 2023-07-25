@@ -1,6 +1,6 @@
 # This is the the code used to build the Dockerfile.
 
-FROM Ubuntu:latest
+FROM ubuntu:latest
 
 RUN apt-get -y update
  
